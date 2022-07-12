@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace = "layouts :: header"></head>
+
+<body>
+<nav th:replace = "layouts :: navbar"> </nav>
+<div class="container">
+    <form th:action="@{/cloth/men/save}" th:object="${menForm}" method="POST">
+
+        <input type="text" placeholder="Cloth Model" th:field="${menForm.model_name}">
+        <input type="text" placeholder="Cloth Color" th:field="${menForm.color}">
+        <input type="text" placeholder="Cloth Size" th:field="${menForm.size}">
+        <input type="text" placeholder="Cloth Price" th:field="${menForm.price}">
+        <input type="text" placeholder="Cloth Description" th:field="${menForm.description}">
+        <button type="submit">submit</button>
+
+    </form>
+</div>
+</body>
+</html>
